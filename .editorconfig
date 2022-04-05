@@ -1,7 +1,5 @@
 # EditorConfig is awesome: https://EditorConfig.org
 
-# top-most EditorConfig file
-root = true
 
 [*]
 indent_style = space
@@ -13,4 +11,4 @@ insert_final_newline = false
 
 [*.yaml]
 indent_style = space
-indent_size = 4
+indent_size = 2
