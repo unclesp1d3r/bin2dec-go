@@ -11,12 +11,17 @@ builds:
     goarch:
       - amd64
       - arm64
+universal_binaries:
+  - replace: true
 archives:
   - replacements:
       darwin: Darwin
       linux: Linux
       windows: Windows
       amd64: x86_64
+    format_overrides:
+      - goos: windows
+        format: zip
 checksum:
   name_template: "checksums.txt"
 snapshot:
@@ -27,3 +32,9 @@ changelog:
     exclude:
       - "^docs:"
       - "^test:"
+signs:
+  - cmd: cosign
+    stdin: "{{ .Env.COSIGN_PWD }}"
+    args:
+      ["sign-blob", "--key=cosign.key", "--output=${signature}", "${artifact}"]
+    artifacts: all
