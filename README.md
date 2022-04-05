@@ -1,5 +1,5 @@
 # bin2dec-go
 
-bin2dec project from App Ideas written in Go
+bin2dec project from [App Ideas](https://github.com/florinpop17/app-ideas) written in Go
 
-Overdone for learning purposes.
+Way overdone for learning purposes.
